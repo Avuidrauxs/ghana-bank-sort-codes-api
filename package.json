@@ -4,7 +4,12 @@
   "description": "This is a scrapping tool to acquire Ghana Banks Sort codes from The Ghana Interbank Payment and Settlement Systems",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/jest && ./node_modules/.bin/codecov --token=3e5ed2bf-6cd9-4261-bb82-84dc46ef1e3f"
+  },
+  "jest": {
+    "verbose": true,
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
   },
   "repository": {
     "type": "git",
@@ -24,8 +29,10 @@
     "request-promise": "^4.2.4"
   },
   "devDependencies": {
+    "codecov": "^3.5.0",
     "eslint": "^6.1.0",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2"
+    "eslint-plugin-import": "^2.18.2",
+    "jest": "^24.9.0"
   }
 }

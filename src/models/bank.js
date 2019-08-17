@@ -6,6 +6,10 @@ class GhanaBank {
     this.asyncBanksData = getAllGhanaBanksData();
   }
 
+  /**
+ * [getGhanaBanksList description]
+ * @return {Promise} [description]
+ */
   async getGhanaBanksList() {
     const banks = [];
     const banksData = await this.asyncBanksData;
@@ -14,21 +18,31 @@ class GhanaBank {
         banks.push(bank.bank);
       }
     });
-    console.log([...new Set(banks)]);
     return [...new Set(banks)];
   }
 
+  /**
+ * [fetchBankSortCodes description]
+ * @param  {[type]}  bankName [description]
+ * @return {Promise}          [description]
+ */
   async fetchBankSortCodes(bankName) {
     const bankBranches = [];
     const banksData = await this.asyncBanksData;
     banksData.map((bank) => {
-      if (bank.bank === bankName) {
+      if (bank.bank === bankName.toUpperCase()) {
         bankBranches.push(bank);
       }
     });
     return bankBranches;
   }
 
+  /**
+ * [fetchBankBranchSortCode description]
+ * @param  {[type]}  bankName   [description]
+ * @param  {[type]}  branchName [description]
+ * @return {Promise}            [description]
+ */
   async fetchBankBranchSortCode(bankName, branchName) {
     let sortCode = SORT_CODE_NOT_FOUND;
     if (!bankName || !branchName) {
@@ -43,11 +57,8 @@ class GhanaBank {
         }
       }
     });
-    console.log(sortCode, 'sortCode');
     return sortCode;
   }
 }
-
-new GhanaBank().getGhanaBanksList()   //('gn bank ltd', 'Obuasi');
 
 module.exports = new GhanaBank();

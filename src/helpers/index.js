@@ -1,3 +1,9 @@
+
+/**
+ * [parseRawBankData description]
+ * @param  {[type]} data [description]
+ * @return {[type]}      [description]
+ */
 const parseRawBankData = (data) => {
   const bankList = [];
   const rawData = data.replace(/\n\n/g, ',');

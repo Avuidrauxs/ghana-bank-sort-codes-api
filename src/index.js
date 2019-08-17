@@ -1,3 +1,3 @@
-const { bank } = require('../models');
+const { bank } = require('./models');
 
 module.exports = { bank };

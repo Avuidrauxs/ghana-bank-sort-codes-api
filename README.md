@@ -1,4 +1,6 @@
 # Ghana Banks Sort Codes/Routing Number API
+[![codecov](https://codecov.io/gh/Avuidrauxs/ghana-bank-sort-codes-api/branch/master/graph/badge.svg)](https://codecov.io/gh/Avuidrauxs/ghana-bank-sort-codes-api)
+
 This was scrapped from Ghana Banks Sort codes from The Ghana Interbank Payment and Settlement Systems website to acquire all the banks in Ghana sort codes and routing numbers.
 
 ## List Of Ghana Banks included

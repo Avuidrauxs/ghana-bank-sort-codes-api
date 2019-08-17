@@ -46,7 +46,7 @@ This was scrapped from Ghana Banks Sort codes from The Ghana Interbank Payment a
   * ZENITH BANK (GH) LTD
 
 
-  ## How to install
+## How to install
 
 `npm i -S ghana-bank-sort-codes-api`
 
@@ -54,11 +54,11 @@ This was scrapped from Ghana Banks Sort codes from The Ghana Interbank Payment a
 
 `yarn add ghana-bank-sort-codes-api`
 
-  ## Usage
+## Usage
 
-  ```javascript
+```javascript
   const { bank } = require('ghana-bank-sort-codes-api');
-  ```
+```
 **OR**
 
 ```javascript
@@ -75,7 +75,7 @@ This was scrapped from Ghana Banks Sort codes from The Ghana Interbank Payment a
     })
 ```
 
-##### Get bank sort code for a particular bank branch(fetchBankSortCodes([bankName]))
+##### Get bank sort code for a particular bank branch(fetchBankBranchSortCodes([bankName, branchName]))
 
 ```javascript
   bank.fetchBankBranchSortCodes('access bank', 'hatso')

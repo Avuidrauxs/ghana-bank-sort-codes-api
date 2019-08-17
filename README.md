@@ -43,4 +43,48 @@ This was scrapped from Ghana Banks Sort codes from The Ghana Interbank Payment a
   * UNITED BANK FOR AFRICA(GH) LTD
   * UNIVERSAL MERCHANT BANK
   * UT BANK
-  * ZENITH BANK (GH) LTD*
+  * ZENITH BANK (GH) LTD
+
+
+  ## How to install
+
+`npm i -S ghana-bank-sort-codes-api`
+
+**OR**
+
+`yarn add ghana-bank-sort-codes-api`
+
+  ## Usage
+
+  ```javascript
+  const { bank } = require('ghana-bank-sort-codes-api');
+  ```
+**OR**
+
+```javascript
+  import { bank } from 'ghana-bank-sort-codes-api';
+```
+
+
+##### Get bank sort codes for a particular bank(fetchBankSortCodes([bankName]))
+
+```javascript
+  bank.fetchBankSortCodes('access bank')
+    .then(bankData => {
+      // This will return an array of objects with all access bank branch names and sort codes
+    })
+```
+
+##### Get bank sort code for a particular bank branch(fetchBankSortCodes([bankName]))
+
+```javascript
+  bank.fetchBankBranchSortCodes('access bank', 'hatso')
+    .then(sortCode => {
+      console.log(sortCode);
+      // will display 280126
+    })
+```
+
+## License
+
+[MIT]('LICENSE')

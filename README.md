@@ -2,7 +2,7 @@
 [![codecov](https://codecov.io/gh/Avuidrauxs/ghana-bank-sort-codes-api/branch/master/graph/badge.svg)](https://codecov.io/gh/Avuidrauxs/ghana-bank-sort-codes-api)
 [![CircleCI](https://circleci.com/gh/Avuidrauxs/ghana-bank-sort-codes-api/tree/master.svg?style=svg)](https://circleci.com/gh/Avuidrauxs/ghana-bank-sort-codes-api/tree/master)
 
-This was scrapped from Ghana Banks Sort codes from The Ghana Interbank Payment and Settlement Systems website to acquire all the banks in Ghana sort codes and routing numbers.
+This library gets all Ghanaian banks sort codes/routing number via web scrapping from _The Ghana Interbank Payment and Settlement Systems_ website.
 
 ## List Of Ghana Banks included
 

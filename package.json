@@ -1,6 +1,6 @@
 {
   "name": "ghana-bank-sort-codes-api",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "This is a scrapping tool to acquire Ghana Banks Sort codes from The Ghana Interbank Payment and Settlement Systems",
   "main": "index.js",
   "scripts": {
@@ -15,9 +15,9 @@
     "type": "git",
     "url": "git+https://github.com/Avuidrauxs/ghana-bank-sort-codes-api.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["ghana bank","ghana", "ghana banks", "bank of ghana", "cedi", "cedis"],
+  "author": "Audax Anchirinah",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Avuidrauxs/ghana-bank-sort-codes-api/issues"
   },

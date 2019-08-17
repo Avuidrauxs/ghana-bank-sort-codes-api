@@ -1,6 +1,6 @@
 {
   "name": "ghana-bank-sort-codes-api",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "This library gets all Ghana Banks Sort codes via web scrapping from _The Ghana Interbank Payment and Settlement Systems_",
   "main": "index.js",
   "scripts": {

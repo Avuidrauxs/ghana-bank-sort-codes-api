@@ -18,7 +18,7 @@ const getAllGhanaBanksData = async () => {
     return banksData;
   } catch (error) {
       console.error(error, SCRAPPING_ERROR);
-      return false;
+      throw Error(SCRAPPING_ERROR);
   }
 }
 

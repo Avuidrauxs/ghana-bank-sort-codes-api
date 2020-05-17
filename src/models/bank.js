@@ -1,36 +1,40 @@
-const { getAllGhanaBanksData } = require('../async-data');
-const { SORT_CODE_NOT_FOUND } = require('../constants');
+const data = require("../json/banksData.json");
+const { SORT_CODE_NOT_FOUND } = require("../constants");
 
 class GhanaBank {
   constructor() {
-    this.asyncBanksData = getAllGhanaBanksData();
+    this.data = data;
   }
 
   /**
  * [getGhanaBanksList description]
- * @return {Promise} [description]
+ * @return Array [description]
  */
-  async getGhanaBanksList() {
+  getGhanaBanksList() {
     const banks = [];
-    const banksData = await this.asyncBanksData;
-    banksData.map((bank) => {
-      if (bank.bank) {
+    this.data.map(bank => {
+      if (bank.bank && !Number.isInteger(Number(bank.bank))) {
         banks.push(bank.bank);
+      } else if (Number.isInteger(Number(bank.bank))) {
+        banks.push(bank.sort_code);
       }
     });
+
     return [...new Set(banks)];
   }
 
   /**
  * [fetchBankSortCodes description]
  * @param  {[type]}  bankName [description]
- * @return {Promise}          [description]
+ * @return Array        [description]
  */
-  async fetchBankSortCodes(bankName) {
+  fetchBankSortCodes(bankName) {
     const bankBranches = [];
-    const banksData = await this.asyncBanksData;
-    banksData.map((bank) => {
-      if (bank.bank === bankName.toUpperCase()) {
+    this.data.map(bank => {
+      if (
+        bank.bank === bankName.toUpperCase() ||
+        bank.sort_code === bankName.toUpperCase()
+      ) {
         bankBranches.push(bank);
       }
     });
@@ -41,19 +45,24 @@ class GhanaBank {
  * [fetchBankBranchSortCode description]
  * @param  {[type]}  bankName   [description]
  * @param  {[type]}  branchName [description]
- * @return {Promise}            [description]
+ * @return  Integer            [description]
  */
-  async fetchBankBranchSortCode(bankName, branchName) {
+  fetchBankBranchSortCode(bankName, branchName) {
     let sortCode = SORT_CODE_NOT_FOUND;
     if (!bankName || !branchName) {
       return sortCode;
     }
-    const banksData = await this.asyncBanksData;
-    banksData.map((bank) => {
+    // const banksData = await this.asyncBanksData;
+    this.data.map(bank => {
       if (bank.bank) {
-        if (bank.bank === bankName.toUpperCase()
-          && bank.branch_name.includes(branchName.toUpperCase())) {
-          sortCode = bank.sort_code;
+        if (
+          (bank.bank === bankName.toUpperCase() ||
+            bank.sort_code === bankName.toUpperCase()) &&
+          bank.branch_name.includes(branchName.toUpperCase())
+        ) {
+          sortCode = Number.isInteger(Number(bank.sort_code))
+            ? bank.sort_code
+            : bank.bank;
         }
       }
     });
